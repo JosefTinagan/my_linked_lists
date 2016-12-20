@@ -32,5 +32,30 @@ module MyLinkedLists
 			end
 		end
 
+		context "#prepend" do
+			it "adds node if head is nil" do
+				ll = LinkedList.new
+				ll.prepend("red")
+				expect(ll.head.value).to eq "red"
+			end
+
+			it "adds node at the start of the list" do
+				ll = LinkedList.new
+				ll.prepend("red")
+				ll.prepend("blue")
+				expect(ll.head.value).to eq "blue"
+				expect(ll.head.next_node.value).to eq "red"
+			end
+
+			it "adds node at the start of a two itemed list" do
+				ll = LinkedList.new
+				ll.prepend("blue")
+				ll.prepend("red")
+				ll.prepend("yellow")
+				expect(ll.head.value).to eq "yellow"
+				expect(ll.head.next_node.value).to eq "red"
+				expect(ll.head.next_node.next_node.value).to eq "blue"
+			end
+		end
 	end
 end

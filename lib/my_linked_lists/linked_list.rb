@@ -16,5 +16,13 @@ module MyLinkedLists
 				tmp.next_node = Node.new(item,nil)
 			end
 		end
+
+		def prepend(item)
+			if head == nil
+				@head = Node.new(item,nil)
+			else
+				@head = Node.new(item, head)
+			end
+		end
 	end
 end
