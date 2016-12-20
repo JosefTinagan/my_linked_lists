@@ -222,11 +222,16 @@ module MyLinkedLists
 		context "#insert_at(data,index)" do
 			it "returns nil if the list is empty" do
 				ll = LinkedList.new
-				expect(ll.insert_at("Mal"), 1).to eq nil
+				expect(ll.insert_at("Mal",1)).to eq nil
 			end
 
 			it "inserts an item to the given index" do
-				
+				ll = LinkedList.new
+				ll.prepend("Mal")
+				ll.prepend("Husky")
+				ll.insert_at("Shep",1)
+				expect(ll.contains?("Shep")).to eq true
+				ll.to_s
 			end
 		end
 

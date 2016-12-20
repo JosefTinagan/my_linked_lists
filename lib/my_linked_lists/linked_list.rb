@@ -111,7 +111,21 @@ module MyLinkedLists
 			end
 			str << "nil"
 			print str
+			puts
 			return str
+		end
+
+		def insert_at(data,indx)
+			return nil if head == nil
+			cur = head
+			prev = nil
+			i = 0
+			while i != indx
+				prev = cur
+				cur = cur.next_node
+				i += 1
+			end
+			prev.next_node = Node.new(data,cur)
 		end
 	end
 end
