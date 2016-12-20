@@ -49,5 +49,16 @@ module MyLinkedLists
 			end
 			return tmp.value
 		end
+
+		def at(num)
+			return nil if head == nil
+			i = 0
+			tmp = head
+			while i != num
+				tmp = tmp.next_node
+				i += 1
+			end
+			return tmp.value
+		end
 	end
 end

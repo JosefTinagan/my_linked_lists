@@ -121,5 +121,23 @@ module MyLinkedLists
 				expect(ll.tail).to eq "a"
 			end
 		end
+
+		context "#at" do
+			it "returns the item specifed by the index" do
+				ll = LinkedList.new
+				ll.append("red")
+				ll.append("trese")
+				ll.append("moy")
+				expect(ll.at(0)).to eq "red"
+			end
+
+			it "returns trese if passed 1 index" do
+				ll = LinkedList.new
+				ll.append("red")
+				ll.append("trese")
+				ll.prepend("moy")
+				expect(ll.at(1)).to eq "trese"
+			end
+		end
 	end
 end
