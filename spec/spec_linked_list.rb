@@ -78,5 +78,27 @@ module MyLinkedLists
 				expect(ll.size).to eq 3
 			end
 		end
+
+		context "#first" do
+			it "returns nil if the list is empty" do
+				ll = LinkedList.new
+				expect(ll.first).to eq nil
+			end
+
+			it "returns the first item of the list if the list is not empty" do
+				ll = LinkedList.new
+				ll.prepend("first")
+				ll.prepend("second")
+				expect(ll.first).to eq "second"
+			end
+
+			it "more #first method test" do
+				ll = LinkedList.new
+				ll.append("two")
+				ll.append("one")
+				expect(ll.first).to eq "two"
+			end
+		end
+
 	end
 end

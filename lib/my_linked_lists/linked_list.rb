@@ -35,5 +35,10 @@ module MyLinkedLists
 			end
 			return i
 		end
+
+		def first
+			return nil if head == nil
+			head.value
+		end
 	end
 end
