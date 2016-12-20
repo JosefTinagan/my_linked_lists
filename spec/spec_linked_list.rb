@@ -122,7 +122,7 @@ module MyLinkedLists
 			end
 		end
 
-		context "#at" do
+		context "#at(index)" do
 			it "returns the item specifed by the index" do
 				ll = LinkedList.new
 				ll.append("red")
@@ -136,8 +136,33 @@ module MyLinkedLists
 				ll.append("red")
 				ll.append("trese")
 				ll.prepend("moy")
-				expect(ll.at(1)).to eq "trese"
+				expect(ll.at(1)).to eq "red"
 			end
 		end
+
+		context "#pop" do
+
+		end
+
+		context "#contains?" do
+
+		end
+
+		context "#find(data)" do
+
+		end
+
+		context "#to_s" do
+
+		end
+
+
+		context "#insert_at(index)" do
+
+		end
+
+		context "#remove_at(index)" do
+
+		end 
 	end
 end
