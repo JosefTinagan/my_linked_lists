@@ -5,3 +5,4 @@ module MyLinkedLists
 end
 
 require_relative './my_linked_lists/node.rb'
+require_relative './my_linked_lists/linked_list.rb'
