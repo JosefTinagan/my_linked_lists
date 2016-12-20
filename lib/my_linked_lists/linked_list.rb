@@ -50,15 +50,44 @@ module MyLinkedLists
 			return tmp.value
 		end
 
-		def at(num)
+		def at(index)
 			return nil if head == nil
 			i = 0
 			tmp = head
-			while i != num
+			while i != index
 				tmp = tmp.next_node
 				i += 1
 			end
 			return tmp.value
 		end
+
+		def pop
+			return nil if head == nil
+			cur = head
+			prev = nil
+			while cur.next_node != nil
+				prev = cur
+				cur = cur.next_node
+			end
+			cur.value = nil
+			cur.next_node = nil
+			prev.next_node = nil
+		end
+
+		def contains?(data)
+			puts "List is empty" if head == nil
+			return false if head == nil
+			tmp = head
+			flag = false
+			while tmp.next_node != nil
+				if tmp.value == data
+					flag = true
+				end
+				tmp = tmp.next_node
+			end
+			return flag
+		end
+
+
 	end
 end

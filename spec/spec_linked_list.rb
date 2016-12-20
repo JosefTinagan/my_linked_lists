@@ -138,14 +138,53 @@ module MyLinkedLists
 				ll.prepend("moy")
 				expect(ll.at(1)).to eq "red"
 			end
+
+			it "returns 3 if passed 2 index" do
+				ll = LinkedList.new
+				ll.prepend("3")
+				ll.prepend("2")
+				ll.prepend("1")
+				expect(ll.at(2)).to eq "3"
+			end
 		end
 
 		context "#pop" do
+			it "returns nil if list is empty" do
+				ll = LinkedList.new
+				expect(ll.pop).to eq nil
+			end
 
+			it "removes the last element in the list" do
+				ll = LinkedList.new
+				ll.append("a")
+				ll.append("b")
+				ll.append("c")
+				ll.pop
+				expect(ll.tail).to eq "b"
+			end
 		end
 
-		context "#contains?" do
+		context "#contains?(item)" do
+			it "returns false if the list is empty" do
+				ll = LinkedList.new
+				expect(ll.contains?("random")).to eq false
+			end
 
+			it "returns true if the item is in the list" do
+				ll = LinkedList.new
+				ll.append("malamute")
+				ll.append("husky")
+				ll.append("german shepherd")
+				expect(ll.contains?("malamute")).to eq true
+			end
+
+			it "returns false if the item is not in the list" do
+				ll = LinkedList.new
+				ll.append("a")
+				ll.append("b")
+				ll.append("c")
+				expect(ll.contains?("d")).to eq false
+			end	
 		end
 
 		context "#find(data)" do
