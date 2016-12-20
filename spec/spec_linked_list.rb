@@ -236,7 +236,19 @@ module MyLinkedLists
 		end
 
 		context "#remove_at(index)" do
+			it "returns nil if the list is empty" do
+				ll = LinkedList.new
+				expect(ll.remove_at(1)).to eq nil
+			end	
 
+			it "removes the node in the given index" do
+				ll = LinkedList.new
+				ll.prepend("Mal")
+				ll.prepend("Husky")
+				ll.prepend("Boom")
+				ll.remove_at(2)
+				ll.to_s
+			end
 		end 
 	end
 end

@@ -120,12 +120,33 @@ module MyLinkedLists
 			cur = head
 			prev = nil
 			i = 0
-			while i != indx
+			while i != indx && cur != nil
 				prev = cur
 				cur = cur.next_node
 				i += 1
 			end
+			if i != indx && cur == nil
+				return nil
+			end
 			prev.next_node = Node.new(data,cur)
+		end
+
+		def remove_at(indx)
+			return nil if head == nil
+			cur = head
+			prev = nil
+			i = 0
+			while i != indx && cur != nil
+				prev = cur
+				cur = cur.next_node
+				i += 1
+			end
+			if i != indx && cur == nil
+				return nil
+			end
+			prev.next_node = cur.next_node
+			cur.value = nil
+			cur.next_node = nil
 		end
 	end
 end
