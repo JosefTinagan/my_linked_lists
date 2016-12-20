@@ -40,5 +40,14 @@ module MyLinkedLists
 			return nil if head == nil
 			head.value
 		end
+
+		def tail
+			return nil if head == nil
+			tmp = head
+			while tmp.next_node != nil
+				tmp = tmp.next_node
+			end
+			return tmp.value
+		end
 	end
 end

@@ -100,5 +100,26 @@ module MyLinkedLists
 			end
 		end
 
+		context "#tail" do
+			it "returns nil if the list is empty" do
+				ll = LinkedList.new
+				expect(ll.tail).to eq nil
+			end
+
+			it "returns the last item of the list if the list is not empty" do
+				ll = LinkedList.new
+				ll.prepend("blue")
+				ll.append("red")
+				expect(ll.tail).to eq "red"
+			end
+
+			it "returns last item part 2" do
+				ll = LinkedList.new
+				ll.prepend("a")
+				ll.prepend("b")
+				ll.prepend("c")
+				expect(ll.tail).to eq "a"
+			end
+		end
 	end
 end
