@@ -88,6 +88,30 @@ module MyLinkedLists
 			return flag
 		end
 
+		def find(data)
+			return nil if head == nil
+			tmp = head
+			i = 0
+			while tmp != nil
+				if tmp.value == data
+					return i
+				end
+				tmp = tmp.next_node
+				i += 1
+			end
+			return nil
+		end
 
+		def to_s
+			tmp = head
+			str = ''
+			while tmp != nil
+				str << "( #{tmp.value} ) -> "
+				tmp = tmp.next_node
+			end
+			str << "nil"
+			print str
+			return str
+		end
 	end
 end

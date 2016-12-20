@@ -188,16 +188,46 @@ module MyLinkedLists
 		end
 
 		context "#find(data)" do
+			it "returns nil if list is empty" do
+				ll = LinkedList.new
+				expect(ll.find("blue")).to eq nil
+			end
 
+			it "returns correct index if found" do
+				ll = LinkedList.new
+				ll.prepend("Mal")
+				ll.prepend("Husky")
+				ll.prepend("German Shep")
+				expect(ll.find("Mal")).to eq 2
+			end
+
+			it "returns nil if data is not in the list" do
+				ll = LinkedList.new
+				ll.prepend("Boom")
+				expect(ll.find("True")).to eq nil
+			end
 		end
 
 		context "#to_s" do
-
+			it "prints the lists" do
+				ll = LinkedList.new
+				ll.prepend("Mal")
+				ll.prepend("Husky")
+				ll.prepend("German Shep")
+				expect(ll.to_s).to eq "( German Shep ) -> ( Husky ) -> ( Mal ) -> nil"
+			end
 		end
 
 
-		context "#insert_at(index)" do
+		context "#insert_at(data,index)" do
+			it "returns nil if the list is empty" do
+				ll = LinkedList.new
+				expect(ll.insert_at("Mal"), 1).to eq nil
+			end
 
+			it "inserts an item to the given index" do
+				
+			end
 		end
 
 		context "#remove_at(index)" do
