@@ -57,5 +57,26 @@ module MyLinkedLists
 				expect(ll.head.next_node.next_node.value).to eq "blue"
 			end
 		end
+
+		context "#size" do
+			it "returns 0 if list is empty" do
+				ll = LinkedList.new
+				expect(ll.size).to eq 0
+			end
+
+			it "returns 1 if list has an item" do
+				ll = LinkedList.new
+				ll.prepend("first item")
+				expect(ll.size).to eq 1
+			end
+
+			it "returns correct size" do
+				ll = LinkedList.new
+				ll.prepend("first")
+				ll.append("second")
+				ll.prepend("third")
+				expect(ll.size).to eq 3
+			end
+		end
 	end
 end

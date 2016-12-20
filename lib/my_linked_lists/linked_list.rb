@@ -24,5 +24,16 @@ module MyLinkedLists
 				@head = Node.new(item, head)
 			end
 		end
+
+		def size
+			return 0 if head == nil
+			tmp = head
+			i = 1
+			while tmp.next_node != nil
+				tmp = tmp.next_node
+				i += 1
+			end
+			return i
+		end
 	end
 end
